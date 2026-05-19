@@ -25,14 +25,11 @@ exit 1
 echo "installing mysql in your server"
 
  dnf install mysql -y
-
+fi 
  if [ $? -eq 0 ]
 
  then
     echo "mysql is successfully installed in your server"
     else        
     echo "failed to install mysql in your server"
-    
-
-
  fi
