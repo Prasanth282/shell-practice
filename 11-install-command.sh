@@ -27,6 +27,4 @@ then
  else
   dnf install mysql -y
 
-  exit 1
-
 fi
