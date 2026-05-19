@@ -17,15 +17,15 @@ exit 1
  
  dnf list installed mysql 
  
- if [ $? -eq 0 ]
+ if [ $? -ne 0 ]
 
  then
- echo "mysql is not installed in Your server"
+ echo "mysql is not installed in your server"
+ exit 1
+
+echo "installing mysql in your server"
 
  dnf instsall mysql -y
 
- else
-  echo "mysql is already installed in your server"
-exit 1
 
-fi
+ fi
