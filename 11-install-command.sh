@@ -26,5 +26,4 @@ then
  echo "mysql is already installed in the server"
  else
   dnf install mysql -y
-
 fi
