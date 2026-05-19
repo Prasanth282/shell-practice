@@ -32,4 +32,7 @@ fi
     echo "mysql is successfully installed in your server"
     else        
     echo "failed to install mysql in your server"
+fi 
+else 
+    echo "mysql already installed nothing to do"
  fi
