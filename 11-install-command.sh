@@ -10,6 +10,7 @@ then
 else 
 echo "error :: you don't have root user privlages"
 
+fi
 exit 1
 
 #checking whether ine application is installed in the server or not 
@@ -20,11 +21,11 @@ then
 
  dnf list installed | grep mysql 
 
- if [ $? -eq 0 ]
+ if [ $userid -eq 0 ]
 
  then 
  echo "mysql is already installed in the server"
  else
   dnf install mysql -y
 
-    fi
+ fi
