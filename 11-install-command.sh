@@ -21,7 +21,6 @@ exit 1
 
  then
  echo "mysql is not installed in your server"
- exit 1
 
 echo "installing mysql in your server"
 
