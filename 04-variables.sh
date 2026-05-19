@@ -1,7 +1,7 @@
 #!bin/bash
 
-person1=trump
-person2=musk
+person1=modi
+person2=varun
 
 echo "$person1 : hello bro how are you doing ?"
 echo "$person2 : I am doing good, how about you ?"
