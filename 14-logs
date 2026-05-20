@@ -12,6 +12,7 @@ LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log"
 
 mkdir -p $LOGFOLDER
 
+if [ $USERID -eq 0 ]
    then 
         echo " you have root privlages"
     else
