@@ -10,7 +10,7 @@ LOG_FOLDER="/var/log/shell-scripts"
 SCRIPT_NAME="$0"
 LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log"
 
-mkdir -p $LOGFOLDER
+mkdir -p /var/log/shell-scripts
 
 if [ $USERID -eq 0 ]
    then 
@@ -22,7 +22,7 @@ if [ $USERID -eq 0 ]
 fi 
 
 VALIDATE (){
-    IF [ $1 -eq 0 ]
+    if [ $1 -eq 0 ]
     then 
         echo " $1 successfully installed in yuor server"
     else
