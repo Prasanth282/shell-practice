@@ -12,6 +12,14 @@ LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log"
 
 mkdir -p /var/log/shell-scripts
 
+VALIDATE(){
+    if [ $1 -eq 0 ]
+    then 
+        echo " $1 successfully installed in yuor server"
+    else
+        echo " $1 installation failed in your server"  
+    }
+    
 if [ $USERID -eq 0 ]
    then 
         echo " you have root privlages"
@@ -20,14 +28,6 @@ if [ $USERID -eq 0 ]
     exit 1   
 
 fi   
-
-VALIDATE(){
-    if [ $1 -eq 0 ]
-    then 
-        echo " $1 successfully installed in yuor server"
-    else
-        echo " $1 installation failed in your server"  
-    }
 
 dnf list installed httpd &>> $LOG_FILE
 if [ $? -ne 0 ]
