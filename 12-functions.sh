@@ -33,7 +33,8 @@ then
     dnf install httpd -y
 
     VALIDATE $? "httpd"
-    fi
+    
+
 else
     echo " httpd is already installed in the server nothing to d ..."
 fi
@@ -48,7 +49,7 @@ then
     dnf install nginx -y
 
     VALIDATE $? "nginx"
-    fi
+    
 else
     echo " nginx is already installed in the server nothing to d ..."
 fi
@@ -63,7 +64,7 @@ then
     dnf install python3 -y
 
     VALIDATE $? "python3"
-    fi
+    
 else
     echo " python3 is already installed in the server nothing to d ..."
 fi
