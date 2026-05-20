@@ -27,7 +27,7 @@ VALIDATE(){
         echo " $1 successfully installed in yuor server"
     else
         echo " $1 installation failed in your server"  
-}
+    }
 
 dnf list installed httpd &>> $LOG_FILE
 if [ $? -ne 0 ]
