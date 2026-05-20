@@ -12,7 +12,7 @@ if [ $userid -eq 0 ]
 then 
     echo -e " $G you have root user privlages"
 else 
-echo "-e $R error :: you don't have root user privlages $N"
+echo -e " $R error :: you don't have root user privlages $N"
 exit 1
 fi
 
