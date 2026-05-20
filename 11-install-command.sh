@@ -35,7 +35,3 @@ dnf install mysql -y
 exit 1
 
 fi 
-
-else 
-    echo "mysql already installed nothing to do"
- fi
