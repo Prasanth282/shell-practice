@@ -21,12 +21,14 @@ if [ $USERID -eq 0 ]
 
 fi   
 
-VALIDATE (){
+VALIDATE()
+{
     if [ $1 -eq 0 ]
     then 
         echo " $1 successfully installed in yuor server"
     else
         echo " $1 installation failed in your server"  
+
 }
 
 dnf list installed httpd &>> $LOG_FILE
