@@ -21,14 +21,12 @@ if [ $USERID -eq 0 ]
 
 fi   
 
-VALIDATE()
-{
+VALIDATE(){
     if [ $1 -eq 0 ]
     then 
         echo " $1 successfully installed in yuor server"
     else
         echo " $1 installation failed in your server"  
-
 }
 
 dnf list installed httpd &>> $LOG_FILE
@@ -38,7 +36,7 @@ then
     echo "httpd installed in your server "
 
     dnf install httpd -y &>> $LOG_FILE
-    $VALDIATE $? "httpd"
+    $VALIDATE $? "httpd"
 else 
     echo "httpd is already installed in your server nothing to do"
 fi
@@ -50,7 +48,7 @@ then
     echo "nginx installed in your server "
 
     dnf install nginx -y &>> $LOG_FILE
-    $VALDIATE $? "nginx"
+    $VALIDATE $? "nginx"
 else 
     echo "nginx is already installed in your server nothing to do"
 fi
@@ -62,9 +60,7 @@ then
     echo "python3 installed in your server "
 
     dnf install python3 -y &>> $LOG_FILE
-    $VALDIATE $? "python3"
+    $VALIDATE $? "python3"
 else 
     echo "python3 is already installed in your server nothing to do" &>> $LOG_FILE
 fi
-
-
