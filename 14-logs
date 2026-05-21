@@ -1,6 +1,9 @@
 #!/bin/bash 
 
 # this script is created to install multiple applications at once in a server and it will store the logs of each step 
+Packages=( "$@" )
+
+echo "$packages" # this will print all the packages which are passed as arguments to the script
 
 USERID=$(id -u)
 USERNAME=$USER
@@ -30,18 +33,18 @@ VALIDATE() {
     fi
 }
 
-dnf list installed $@ &>> $LOG_FILE
+# dnf list installed $@ &>> $LOG_FILE
  
-  if [ $? -ne 0 ]
-    then 
-        echo " $@ is not installed, installing now..." | tee -a $LOG_FILE
+#   if [ $? -ne 0 ]
+#     then 
+#         echo " $@ is not installed, installing now..." | tee -a $LOG_FILE
         
-        dnf install $1 -y
-        VALIDATE $? "$1"
-    else
-        echo "$1 is already isntalled in server nothing to do .." | tee -a $LOG_FILE
-        exit 1
+#         dnf install $1 -y
+#         VALIDATE $? "$1"
+#     else
+#         echo "$1 is already isntalled in server nothing to do .." | tee -a $LOG_FILE
+#         exit 1
     
-  fi 
+#   fi 
 
 
