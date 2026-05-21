@@ -10,7 +10,7 @@ SCRIPT_NAME=$(basename $0)
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 
 mkdir -p $LOGS_FOLDER
-echo script executed date is :: $(date) | tee -a &>> $LOG_FILE
+echo "script executed date is :: $(date)" | tee -a &>> $LOG_FILE
 
 if [ $USERID -eq 0 ]
 
