@@ -13,9 +13,9 @@ mkdir -p $LOGS_FOLDER
 
 if [ $USERID -eq 0 ]
 
-   then 
+then 
     echo " $USERNAME has root privlages " &>> $LOG_FILE
-    else  
+else  
     echo " error:: $USERNAME don't have root privlages " &>> $LOG_FILE
     exit 1
 fi 
