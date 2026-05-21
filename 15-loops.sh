@@ -27,24 +27,27 @@ fi
 VALIDATE() {
     if [ $1 -eq 0 ]
     then 
-        echo " successfully installed $1 "
+        echo " successfully installed $2 "
     else 
-        echo " error:: failed to install $1 "
+        echo " error:: failed to install $2 "
     fi
 }
 
-dnf list installed $1 &>> $LOG_FILE
- 
-  if [ $? -ne 0 ]
-    then 
-        echo " $1 is not installed, installing now..." | tee -a $LOG_FILE
+for package in $Packages
+do
+    dnf list installed $package &>> $LOG_FILE
+    VALIDATE $? "$package"
+done
+#   if [ $? -ne 0 ]
+#     then 
+#         echo " $1 is not installed, installing now..." | tee -a $LOG_FILE
         
-        dnf install $1 -y
-        VALIDATE $? "$1"
-    else
-        echo "$1 is already isntalled in server nothing to do .." | tee -a $LOG_FILE
-        exit 1
+#         dnf install $1 -y
+#         VALIDATE $? "$1"
+#     else
+#         echo "$1 is already isntalled in server nothing to do .." | tee -a $LOG_FILE
+#         exit 1
     
-  fi 
+#   fi 
 
 
