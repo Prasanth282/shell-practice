@@ -24,12 +24,18 @@ else
     exit 1
 fi 
 
+INSTALL() {
+    echo " installing $1 " | tee -a $LOG_FILE
+    dnf install $1
+}
+
 VALIDATE() {
     if [ $1 -eq 0 ]
     then 
-        echo " successfully installed $1 "
+        echo " successfully installed $2 "
     else 
-        echo " error:: failed to install $1 "
+        echo " error:: not installed to install $2 "
+        INSTALL $2  &>> $LOG_FILE
     fi
 }
 
