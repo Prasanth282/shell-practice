@@ -3,7 +3,7 @@
 # this script is created to install multiple applications at once in a server and it will store the logs of each step 
 Packages=( "$@" )
 
-echo "$packages" # this will print all the packages which are passed as arguments to the script
+echo "$Packages" # this will print all the packages which are passed as arguments to the script
 
 USERID=$(id -u)
 USERNAME=$USER
