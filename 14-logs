@@ -5,7 +5,7 @@
 USERID=$(id -u)
 USERNAME=$USER
 
-LOGS_FOLDER="/var/log/shell_logs"
+LOGS_FOLDER="/var/log/SHELL_LOGS"
 SCRIPT_NAME=$(basename $0)
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 
