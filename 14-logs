@@ -2,7 +2,7 @@
 
 # this script is created to install multiple applications at once in a server and it will store the logs of each step 
 
-USERID=$(ID -u)
+USERID=$(id -u)
 USERNAME=$USER
 
 LOGS_FOLDER="/var/log/shell_logs"
