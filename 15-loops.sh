@@ -26,7 +26,7 @@ fi
 
 INSTALL() {
     echo " installing $1 " | tee -a $LOG_FILE
-    dnf install $1 -y &>> $LOG_FILE
+    dnf install $1 -y | tee -a $LOG_FILE
 }
 
 VALIDATE() {
