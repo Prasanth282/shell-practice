@@ -35,7 +35,7 @@ VALIDATE() {
         echo " successfully installed $2 "
     else 
         echo " error:: not installed to install $2 "
-        INSTALL $2  &>> $LOG_FILE
+        INSTALL "$2"
     fi
 }
 
