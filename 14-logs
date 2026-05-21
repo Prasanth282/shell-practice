@@ -37,7 +37,7 @@ dnf list installed $@ &>> $LOG_FILE
         echo " $@ is not installed, installing now..." | tee -a $LOG_FILE
         
         dnf install $1 -y
-        $VALIDATE $? "$1"
+        VALIDATE $? "$1"
     else
         echo "$1 is already isntalled in server nothing to do .." | tee -a $LOG_FILE
         exit 1
