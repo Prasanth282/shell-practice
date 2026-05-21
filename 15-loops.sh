@@ -27,9 +27,9 @@ fi
 VALIDATE() {
     if [ $1 -eq 0 ]
     then 
-        echo " successfully installed $2 "
+        echo " successfully installed $1 "
     else 
-        echo " error:: failed to install $2 "
+        echo " error:: failed to install $1 "
     fi
 }
 
