@@ -14,9 +14,9 @@ mkdir -p $LOGS_FOLDER
 if [ $USERID -eq 0 ]
 
 then 
-    echo " $USERNAME has root privlages " &>> $LOG_FILE
+    echo " $USERNAME has root privlages " | tee -a &>> $LOG_FILE
 else  
-    echo " error:: $USERNAME don't have root privlages " &>> $LOG_FILE
+    echo " error:: $USERNAME don't have root privlages " | tee -a &>> $LOG_FILE
     exit 1
 fi 
 
@@ -33,12 +33,12 @@ dnf list installed $@ &>> $LOG_FILE
  
   if [ $? -ne 0 ]
     then 
-        echo " $@ is not installed, installing now..." &>> $LOG_FILE
+        echo " $@ is not installed, installing now..." | tee -a &>> $LOG_FILE
         
         dnf install $@ -y
         VALIDATE $? "$@"
     else
-        echo "$@ is already isntalled in server nothing to do .." &>> $LOG_FILE
+        echo "$@ is already isntalled in server nothing to do .." | tee -a &>> $LOG_FILE
         exit 1
     
   fi 
