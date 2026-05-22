@@ -5,7 +5,7 @@
 USERID=$(id -u)
 USERNAME=$USER
 
-packages=("httpd" "mariadb-server" "php")
+packages="$@"
 
 if [ $USERID -eq 0 ]
 then 
