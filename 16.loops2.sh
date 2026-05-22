@@ -5,7 +5,7 @@
 USERID=$(id -u)
 USERNAME=$USER
 
-packages=("httpd","nginx","mongodb","python")
+packages=("httpd" "nginx" "mongodb" "python")
 
 if [ $USERID -eq 0 ]
 then 
