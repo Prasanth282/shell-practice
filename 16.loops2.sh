@@ -19,7 +19,9 @@ INSTALL() {
    if [ $? -ne 0 ]
    then 
         dnf install $1 -y ]
-        VALIDATE $? $1} 
+        VALIDATE $? $1
+    fi
+    }    
 
 VALIDATE (){
     if [ $1 -eq 0 ]
