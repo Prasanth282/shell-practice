@@ -17,7 +17,7 @@ fi
 
 INSTALL() {
    
-        dnf install $1 -y ]
+        dnf install $1 -y 
         VALIDATE $? $1
     }    
 
