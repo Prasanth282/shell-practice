@@ -5,7 +5,7 @@
 USERID=$(id -u)
 USERNAME=$USER
 
-packages="httpd"
+packages="java"
 
 if [ $USERID -eq 0 ]
 then 
