@@ -33,9 +33,12 @@ VALIDATE (){
 for package in "${packages[@]}"
 do 
 dnf list installed "$package"
- if [ $? -ne 0 ]
+ if [ $? -eq 0 ]
     then 
         echo "$package is not installed. installing now .."
         INSTALL "$package"
+    else 
+        echo "$package is already installed in the server nothing to do .."
+        exit 1
     fi
 done
