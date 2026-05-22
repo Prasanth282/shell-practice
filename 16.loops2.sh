@@ -5,7 +5,7 @@
 USERID=$(id -u)
 USERNAME=$USER
 
-packages="java"
+packages=("httpd" "mariadb-server" "php")
 
 if [ $USERID -eq 0 ]
 then 
@@ -30,12 +30,12 @@ VALIDATE (){
     fi
 }
 
-for package in ${packages[@]}
+for package in "${packages[@]}"
 do 
 dnf list installed ${packages[@]}
  if [ $? -ne 0 ]
     then 
         echo "$package is not installed. installing now .."
-        INSTALL "$1"
+        INSTALL "$package"
     fi
 done
