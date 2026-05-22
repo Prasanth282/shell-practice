@@ -36,6 +36,6 @@ dnf list installed ${packages[@]}
  if [ $? -ne 0 ]
     then 
         echo "$package is not installed. installing now .."
-        INSTALL "$package"
+        INSTALL "$1"
     fi
 done
