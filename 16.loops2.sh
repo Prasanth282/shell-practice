@@ -2,7 +2,7 @@
 
 # this script used to print the different applications using for loop 
 
-USERID=$(id-u)
+USERID=$(id -u)
 USERNAME=$USER
 
 packages=("httpd","nginx","mongodb","python")
