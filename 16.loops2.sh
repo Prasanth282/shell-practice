@@ -32,7 +32,7 @@ VALIDATE (){
 
 for package in "${packages[@]}"
 do 
-dnf list installed ${packages[@]}
+dnf list installed $package
  if [ $? -ne 0 ]
     then 
         echo "$package is not installed. installing now .."
