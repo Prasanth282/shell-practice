@@ -5,4 +5,4 @@
 while IFS= read -r line
 do 
   echo" $line"
-done < catalogue.log
+done < 01-hello-world
