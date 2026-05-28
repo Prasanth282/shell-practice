@@ -33,7 +33,7 @@ fi
 
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
 
-if [ ! -f "$FILES" ]
+if [ ! -z "$FILES" ]
 then 
     echo " files are present in the directory. files are zipping "
     TIME_STAMP="$(date +%F-%H-%M-%S)"
