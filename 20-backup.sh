@@ -37,7 +37,7 @@ if [ ! -z "$FILES" ]
 then 
     echo " files are present in the directory. files are zipping "
     TIME_STAMP="$(date +%F-%H-%M-%S)"
-    ZIP_FILE="$DESTI_DIR/$@-$TIME_STAMP.zip"
+    ZIP_FILE="$DESTI_DIR/app-log-$TIME_STAMP.zip
     echo "$FILES" | zip -@ "ZIP_FILE"
 
     if [ -f "$ZIP_FILE" ]
