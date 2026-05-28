@@ -5,7 +5,7 @@
 #    2.filter the files older than 14 days 
 #    3.thn we need to delete the files 
 
-SOURCE_DIR=/home/ec2user/oldlogs.log
+SOURCE_DIR=/home/ec2-user/oldlogs.log
 
 DELETE_OLD_LOGS= find $SOURCE_DIR -name "*.log" -mtime +14
  
