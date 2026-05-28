@@ -12,6 +12,6 @@ DELETE_OLD_LOGS= find $SOURCE_DIR -name "*.log" -mtime +14
 while IFS= read -r filepath
 do 
    echo " deleting $filepath "
-   rm -rf $filepath
+   rm -rf "$filepath"
 
 done <<< $DELETE_OLD_LOGS
