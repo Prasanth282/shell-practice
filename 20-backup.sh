@@ -40,7 +40,7 @@ then
     ZIP_FILE="$DESTI_DIR/$@-$TIME_STAMP.zip"
     echo "$FILES" | zip -@ "ZIP_FILE"
 
-    if [ -f "$FILES" ]
+    if [ -f "$ZIP_FILE" ]
     then 
         echo " files are zipped successfully "
     else 
