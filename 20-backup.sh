@@ -33,14 +33,14 @@ fi
 
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
 
-if [ -z $FILES ]
+if [ -z "$FILES" ]
 then 
     echo " files are present in the directory. files are zipping "
     TIME_STAMP="$(date +%F-%H-%M-%S)"
     ZIP_FILE="$DESTI_DIR/$@-$TIME_STAMP.zip"
     $FILES | zip -@ "$ZIP_FILE"
 
-    if [ -f $ZIP_FILE ]
+    if [ -f "$FILES" ]
     then 
         echo " files are zipped successfully "
     else 
