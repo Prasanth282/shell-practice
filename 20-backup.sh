@@ -44,7 +44,7 @@ then
     then 
         echo " files are zipped successfully "
     else 
-        echo zipping files are failed 
+        echo " zipping files are failed "
     fi 
 else 
     echo " files are not found to zip "
