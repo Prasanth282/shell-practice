@@ -7,7 +7,7 @@
 
 SOURCE_DIR=/home/ec2-user/oldlogs.log
 
-DELETE_OLD_LOGS= find $($SOURCE_DIR -name "*.log" -mtime +14)
+DELETE_OLD_LOGS= $(find $SOURCE_DIR -name "*.log" -mtime +14)
  
 while IFS= read -r filepath
 do 
