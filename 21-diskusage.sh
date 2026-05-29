@@ -12,8 +12,7 @@ do
 
    if [ "$USAGE" -ge "$THRESHOLD_LIMIT" ]
    then 
-    echo " server : $IP "
-    MSG+="high disk usage found in : $PARTITION : $USAGE\n"
+       MSG+=": $PARTITION : $USAGE\n"
    fi           
 
 done <<< "$DISK_USAGE" 
