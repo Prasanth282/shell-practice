@@ -38,7 +38,7 @@ then
     echo " files are present in the directory. files are zipping "
     TIME_STAMP="$(date +%F-%H-%M-%S)"
     ZIP_FILE="$DESTI_DIR/app-log-$TIME_STAMP.zip"
-    echo "$FILES" | zip -@ "ZIP_FILE"
+    echo "find $SOURCE_DIR -name "*.log" -mtime +$DAYS" | zip -@ "ZIP_FILE"
 
     if [ -f "$ZIP_FILE" ]
     then 
