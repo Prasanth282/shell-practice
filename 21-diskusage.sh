@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DISK_USAGE=$(df -hT | grep -v Use)
-THRISHOLD_LIMIT=1
+THRESHOLD_LIMIT=1
 MSG=''
 IP=$(curl http://169.254.169.254/latest/meta-data/local-ipv4)
 
@@ -10,11 +10,11 @@ do
    USAGE=$(echo $line | awk '{print $6}' | cut -d '%' -f1)
    PARTITION=$(echo $line awk '{print $7}')
 
-   if [ $USAGE -ge $THRISHOLD_LIMIT ]
+   if [ "$USAGE" -ge "$THRESHOLD_LIMIT" ]
    then 
-    MSG+=high disk usage found in $IP : $PARTITION : $USAGE
+    MSG+="high disk usage found in $IP : $PARTITION : $USAGE\n"
    fi           
 
-done <<< $DISK_USAGE 
+done <<< "$DISK_USAGE" 
 
-echo -e $MSG
+echo -e "$MSG"
