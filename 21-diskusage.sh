@@ -12,6 +12,7 @@ do
 
    if [ "$USAGE" -ge "$THRESHOLD_LIMIT" ]
    then 
+       echo " highdisk usage found in $IP "
        MSG+=": $PARTITION : $USAGE\n"
    fi           
 
