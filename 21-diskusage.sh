@@ -7,13 +7,13 @@ IP=$(curl http://169.254.169.254/latest/meta-data/local-ipv4)
 
 while IFS= read -r line 
 do 
-USAGE=$(echo $line awk '{print $6}' | cut -d '%' -f1 )
-PARTITION=$(echo $line awk '{print $7}')
-if [ $USAGE -ge $THRISHOLD ]
-then 
+   USAGE=$(echo $line awk '{print $6}' | cut -d '%' -f1 )
+   PARTITION=$(echo $line awk '{print $7}')
+   if [ $USAGE -ge $THRISHOLD ]
+   then 
     MSG+=high disk usage found in $IP : $PARTITION : $USAGE
-fi           
+   fi           
 
-done <<<$DISK_USAGE 
+done <<< $DISK_USAGE 
 
 echo -e $MSG
